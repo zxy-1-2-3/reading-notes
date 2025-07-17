@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《教学理论：课堂教学的原理、策略与研究》读书心得</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d5a87;
+            --accent-color: #4a90a4;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --bg-primary: #f7fafc;
+            --bg-secondary: #edf2f7;
+            --bg-card: #ffffff;
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e0;
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-heavy: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.75;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.03) 0%, transparent 50%);
+            color: var(--text-primary);
+            font-size: 16px;
+        }
+        
+        .container {
+            background: var(--bg-card);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--gradient-primary);
+            z-index: 1;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+        }
+        
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        
+        .enter-button {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .enter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .book-info {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .book-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        
+        .book-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .book-info li {
+            margin-bottom: 12px;
+            font-weight: 500;
+            color: var(--text-primary);
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .book-info li::before {
+            content: '▪';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .feature p {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>《教学理论：课堂教学的原理、策略与研究》<br>的读书心得</h1>
+        <p class="subtitle">——从学习者视角的深度解读与反思</p>
+        
+        <a href="教学理论读书心得.html" class="enter-button">📖 开始阅读</a>
+        
+        <div class="book-info">
+            <h3>📚 书籍信息</h3>
+            <ul>
+                <li>书名：《教学理论：课堂教学的原理、策略与研究》</li>
+                <li>作者：施良方、崔允漷</li>
+                <li>出版社：华东师范大学出版社</li>
+                <li>出版年份：1999年7月</li>
+                <li>页数：440页</li>
+            </ul>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h4>🎨 现代化设计</h4>
+                <p>卡片式布局，专业配色，响应式设计，提供优秀的阅读体验</p>
+            </div>
+            <div class="feature">
+                <h4>🛠️ 阅读辅助</h4>
+                <p>字体调节、夜间模式、智能目录、关键概念高亮</p>
+            </div>
+            <div class="feature">
+                <h4>📚 深度内容</h4>
+                <p>理论对话、批判思考、学习者视角、建构性建议</p>
+            </div>
+            <div class="feature">
+                <h4>🎯 学术价值</h4>
+                <p>系统梳理、拓展阅读、个人思考、时代启示</p>
+            </div>
+        </div>
+        
+
+    </div>
+</body>
+</html>
