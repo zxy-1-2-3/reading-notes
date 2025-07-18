@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《课程理论》读书心得 - 从词源学视角思考课程概念的哲学内涵</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d5a87;
+            --accent-color: #4a90a4;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --bg-primary: #f7fafc;
+            --bg-secondary: #edf2f7;
+            --bg-card: #ffffff;
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e0;
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-heavy: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.75;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: var(--bg-primary);
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.03) 0%, transparent 50%);
+            color: var(--text-primary);
+            font-size: 16px;
+        }
+
+        .container {
+            background: var(--bg-primary);
+            padding: 30px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .main-card {
+            background: var(--bg-card);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .content-card {
+            background: var(--bg-card);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-medium);
+            margin: 25px 0;
+            border: 1px solid var(--border-light);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .card-header {
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .card-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-primary);
+        }
+
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--gradient-primary);
+            z-index: 1;
+        }
+
+        .section-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: var(--shadow-medium);
+            margin: 30px 0;
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .mini-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            margin: 20px 0;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .mini-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 25px;
+            letter-spacing: -0.02em;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        h1 small {
+            display: block;
+            font-size: 0.45em;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-top: 10px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.75em;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 25px;
+            letter-spacing: -0.01em;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 25px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        h3::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 0.8em;
+        }
+
+        h4 {
+            color: var(--secondary-color);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        h4::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 0.9em;
+        }
+
+        .book-info {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-info::before {
+            content: '📚';
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .book-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .book-info li {
+            margin-bottom: 12px;
+            font-weight: 500;
+            color: var(--text-primary);
+            font-family: 'Source Sans Pro', sans-serif;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .book-info li::before {
+            content: '▪';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 5px solid #ff9800;
+            box-shadow: var(--shadow-light);
+            position: relative;
+        }
+
+        .highlight::before {
+            content: '💡';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.2em;
+            opacity: 0.6;
+        }
+
+        .quote {
+            font-style: italic;
+            color: var(--text-secondary);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: var(--shadow-light);
+            position: relative;
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        .quote::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 3em;
+            color: var(--accent-color);
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .quote::after {
+            content: '"';
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            font-size: 3em;
+            color: var(--accent-color);
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .framework-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-light);
+        }
+
+        .framework-table th,
+        .framework-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .framework-table th {
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 600;
+            font-family: 'Source Sans Pro', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9em;
+        }
+
+        .framework-table tr:nth-child(even) {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .framework-table tr:hover {
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+            transition: background 0.3s ease;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, #f0fff4 0%, #dcfce7 100%);
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #bbf7d0;
+            margin-top: 40px;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+        }
+
+        .conclusion::before {
+            content: '🎓';
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            font-size: 2.5em;
+            opacity: 0.4;
+        }
+
+        .learning-perspective {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #2196f3;
+            margin: 25px 0;
+            box-shadow: var(--shadow-light);
+            position: relative;
+        }
+
+        .learning-perspective::before {
+            content: '🧠';
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.5em;
+            opacity: 0.5;
+        }
+
+        .critical-thinking {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #e91e63;
+            margin: 25px 0;
+            box-shadow: var(--shadow-light);
+            position: relative;
+        }
+
+        .critical-thinking::before {
+            content: '🤔';
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.5em;
+            opacity: 0.5;
+        }
+
+        .theory-connection {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #9c27b0;
+            margin: 25px 0;
+            box-shadow: var(--shadow-light);
+            position: relative;
+        }
+
+        .theory-connection::before {
+            content: '🔗';
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.5em;
+            opacity: 0.5;
+        }
+
+        p {
+            text-indent: 2em;
+            margin-bottom: 16px;
+            text-align: justify;
+            line-height: 1.8;
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .no-indent {
+            text-indent: 0;
+        }
+
+        ul, ol {
+            margin-left: 2em;
+            margin-bottom: 20px;
+            padding-left: 1em;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        ul li::marker {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        ol li {
+            padding-left: 10px;
+        }
+        
+        ol li::marker {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+
+
+        .document-footer {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+            border-top: 3px solid var(--border-light);
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-quote {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .footer-quote em {
+            display: block;
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .footer-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-stats span {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-light);
+            font-weight: 500;
+        }
+
+        .chapter-analysis {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-light);
+            position: relative;
+        }
+
+        .chapter-analysis::before {
+            content: '📖';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.2em;
+            opacity: 0.4;
+        }
+
+
+
+        /* 响应式设计 */
+        /* 中等屏幕调整 */
+        @media (max-width: 1024px) {
+            .table-of-contents {
+                max-width: 220px;
+                max-height: calc(100vh - 140px);
+            }
+        }
+
+        /* 小屏幕隐藏导航元素 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 25px;
+                border-radius: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.3em;
+            }
+
+            h4 {
+                font-size: 1.1em;
+            }
+
+            .framework-table {
+                font-size: 0.9em;
+            }
+
+            .framework-table th,
+            .framework-table td {
+                padding: 12px 8px;
+            }
+            
+            .header-decoration,
+            .reading-controls,
+            .table-of-contents,
+            .toc-toggle {
+                display: none;
+            }
+        }
+
+        /* 装饰元素 */
+        .header-decoration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            opacity: 0.6;
+        }
+
+        .decoration-line {
+            width: 80px;
+            height: 2px;
+            background: var(--gradient-primary);
+            border-radius: 1px;
+        }
+
+        .decoration-circle {
+            width: 12px;
+            height: 12px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            margin: 0 15px;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+        }
+
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-medium), transparent);
+        }
+
+        .section-divider span {
+            background: var(--bg-card);
+            padding: 0 20px;
+            color: var(--text-muted);
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+
+
+        /* 导航栏 */
+        .nav-bar {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1002;
+        }
+
+        .nav-home {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-home:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        /* 阅读辅助功能 */
+        .reading-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 12px 8px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-light);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .control-button {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: transform 0.2s ease;
+            min-width: 40px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-button:hover {
+            transform: scale(1.05);
+        }
+
+
+
+        /* 目录导航 */
+        .table-of-contents {
+            position: fixed;
+            left: 20px;
+            top: 140px; /* 调整位置，避免与返回首页按钮重叠 */
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-light);
+            max-width: 250px;
+            max-height: calc(100vh - 180px); /* 确保不会超出屏幕底部 */
+            overflow-y: auto;
+            z-index: 999;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .table-of-contents.hidden {
+            transform: translateX(-100%);
+        }
+
+        .toc-toggle {
+            position: fixed;
+            left: 20px;
+            top: 80px; /* 调整位置，避免与返回首页按钮重叠 */
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: var(--shadow-medium);
+            z-index: 1001;
+            transition: transform 0.3s ease;
+        }
+
+        .toc-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-item {
+            margin-bottom: 8px;
+        }
+
+        .toc-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 1.4;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .toc-link:hover {
+            background: var(--bg-secondary);
+            color: var(--primary-color);
+        }
+
+        .toc-link.active {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        /* 关键概念高亮 */
+        .key-concept {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        /* 章节摘要 */
+        .chapter-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .chapter-summary h4 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .chapter-summary p {
+            color: rgba(255, 255, 255, 0.9);
+            text-indent: 0;
+        }
+
+        /* 夜间模式 */
+        body.dark-mode {
+            --primary-color: #4a90e2;
+            --secondary-color: #6bb6ff;
+            --accent-color: #8cc8ff;
+            --text-primary: #e2e8f0;
+            --text-secondary: #cbd5e0;
+            --text-muted: #a0aec0;
+            --bg-primary: #1a202c;
+            --bg-secondary: #2d3748;
+            --bg-card: #2d3748;
+            --border-light: #4a5568;
+            --border-medium: #718096;
+        }
+
+        /* 打印样式 */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .container {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            .learning-perspective,
+            .critical-thinking,
+            .theory-connection,
+            .highlight,
+            .quote,
+            .conclusion,
+            .chapter-analysis {
+                background: #f9f9f9 !important;
+                box-shadow: none;
+            }
+
+            .header-decoration,
+            .reading-controls,
+            .table-of-contents,
+            .toc-toggle,
+            .nav-bar,
+            .document-footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav-bar">
+        <a href="index.html" class="nav-home">🏠 返回首页</a>
+    </div>
+
+    <!-- 阅读控制面板 -->
+    <div class="reading-controls">
+        <button class="control-button" onclick="adjustFontSize(-1)">A-</button>
+        <button class="control-button" onclick="adjustFontSize(1)">A+</button>
+        <button class="control-button" onclick="toggleDarkMode()">🌙</button>
+        <button class="control-button" onclick="toggleLineHeight()">📏</button>
+    </div>
+
+    <!-- 目录切换按钮 -->
+    <button class="toc-toggle" onclick="toggleTOC()">📋</button>
+
+    <!-- 目录导航 -->
+    <div class="table-of-contents hidden" id="tableOfContents">
+        <h4 style="margin-bottom: 15px; color: var(--primary-color);">目录导航</h4>
+        <ul class="toc-list">
+            <li class="toc-item"><a href="#section1" class="toc-link">一、课程概念的本体论审视</a></li>
+            <li class="toc-item"><a href="#section2" class="toc-link">二、课程理论的哲学基础</a></li>
+            <li class="toc-item"><a href="#section3" class="toc-link">三、理论反思与当代启示</a></li>
+            <li class="toc-item"><a href="#section4" class="toc-link">四、学习收获与思考</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="main-card">
+            <div class="header-decoration">
+                <div class="decoration-line"></div>
+                <div class="decoration-circle"></div>
+                <div class="decoration-line"></div>
+            </div>
+
+            <h1>《课程理论》读书心得<br><small>——从词源学视角思考课程概念的哲学内涵</small></h1>
+            
+            <div class="quote">
+                课程定义的争辩背后，实际上是不同认识论基础和价值取向的较量。<br>
+                <span style="float: right; font-weight: 500; font-size: 0.9em;">——施良方</span>
+            </div>
+
+            <div class="book-info">
+                <ul>
+                    <li>书名：《课程理论：课程的基础、原理与问题》</li>
+                    <li>作者：施良方</li>
+                    <li>出版社：教育科学出版社</li>
+                    <li>出版年份：1996年</li>
+                    <li>ISBN：9787504113525</li>
+                    <li>页数：461页</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-card" id="section1">
+            <div class="card-header">
+                <h2>一、课程概念的本体论审视：从"跑道"到"奔跑"的哲学分歧</h2>
+            </div>
+            <p>在阅读施良方教授的《课程理论》过程中,一个基础而又复杂的问题引起了我的深思：什么是课程？施良方教授在书中提到，课程定义的多样性反映了不同的哲学假设和价值取向。通过学习，我逐渐认识到 <em>curriculum</em> 概念的本体论二元性和课程理论的哲学基础是理解这一问题的关键，这让我开始思考课程概念背后的深层哲学矛盾及其对当代教育实践的影响。</p>
+            <p>在学习过程中,我发现拉丁语词根蕴含着丰富的哲学意义。当我追溯 <em>curriculum</em> 这个词汇的起源时,让我印象深刻的是它承载着两种截然不同的教育哲学,我逐渐理解到这种词源学上的二元性实际上反映了课程理论中两种根本不同的认识论传统。</p>
+
+            <table class="framework-table">
+                <thead>
+                    <tr>
+                        <th>名词形式: curriculum = "跑道"</th>
+                        <th>动词形式: currere = "奔跑"</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>本体论特征:</strong> 客观存在的固定结构</td>
+                        <td><strong>本体论特征:</strong> 动态的个体经验过程</td>
+                    </tr>
+                    <tr>
+                        <td><strong>认识论假设:</strong> 知识具有普遍性和标准性</td>
+                        <td><strong>认识论假设:</strong> 知识的个人建构性</td>
+                    </tr>
+                    <tr>
+                        <td><strong>实践指向:</strong> 标准化的学习轨道设计</td>
+                        <td><strong>实践指向:</strong> 个性化的学习经验创造</td>
+                    </tr>
+                    <tr>
+                        <td><strong>价值取向:</strong> 效率优先、统一管理</td>
+                        <td><strong>价值取向:</strong> 个性发展、意义生成</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="learning-perspective">
+                <h4>我的理解和思考</h4>
+                <p class="no-indent">通过深入学习,我认为这种词源学上的二元性并非偶然,它反映了西方哲学传统中实证主义与现象学的根本对立。我理解到"跑道"范式体现了笛卡尔以来的理性主义传统,强调知识的客观性、普遍性和可测量性;而"奔跑"范式则承继了胡塞尔现象学的精神,重视个体的生活世界和意义建构过程。</p>
+                <p class="no-indent">施良方教授认为,这种哲学分歧直接导致了课程定义的根本分化。在我看来,客观主义阵营将课程视为"教学科目"、"有计划的教学活动"或"预期的学习结果",本质上是一种工具理性的体现;而主观主义阵营强调课程是"学习经验"、"社会文化的再生产"或"社会改造",体现了价值理性的诉求。</p>
+                <p class="no-indent">我还了解到,当代学者Doll指出,哲学在课程发展中具有多重作用:帮助我们明确意图、使意图更加具体明确,并将其发展为有用的构念。这进一步证实了课程概念背后哲学基础的重要性。</p>
+            </div>
+
+            <h3>课程概念的本体论二元性</h3>
+            <p>课程概念的词源学二元性反映了教育哲学的根本分歧，形成了客观主义（“跑道”范式）与主观主义（“奔跑”范式）两种哲学传统的根本对立。</p>
+
+            <div class="mini-card">
+                <h4>客观主义阵营 ("跑道" 范式)</h4>
+                <ul>
+                    <li><strong>哲学基础:</strong> 实证主义、理性主义</li>
+                    <li><strong>核心观念:</strong> 课程即教学科目、课程即有计划的教学活动、课程即预期的学习结果</li>
+                    <li><strong>核心特征:</strong> 强调标准化和统一性、注重效率和可测量性、体现工具理性、知识传递导向</li>
+                    <li><strong>代表人物:</strong> 博比特、泰勒</li>
+                </ul>
+            </div>
+            
+            <div class="mini-card">
+                <h4>主观主义阵营 ("奔跑" 范式)</h4>
+                <ul>
+                    <li><strong>哲学基础:</strong> 现象学、解释学</li>
+                    <li><strong>核心观念:</strong> 课程即学习经验、课程即社会文化的再生产、课程即社会改造</li>
+                    <li><strong>核心特征:</strong> 强调个性化和多样性、注重意义和体验、体现价值理性、经验建构导向</li>
+                    <li><strong>代表人物:</strong> 杜威、施瓦布、斯滕豪斯</li>
+                </ul>
+            </div>
+
+            <div class="critical-thinking">
+                <h4>我对当代意义的思考</h4>
+                <p class="no-indent">在学习中我发现,这种本体论二元性在当代教育实践中表现得尤为突出。我国新课程改革中出现的诸多困境——如"素质教育"理念与"应试教育"现实的冲突、课程标准的统一性与教学实施的个性化之间的张力——让我意识到这些问题本质上都可以追溯到这种深层的哲学分歧。</p>
+                <p class="no-indent">让我感到更为重要的是,这种二元性让我思考课程理论研究中的一个根本问题:我们究竟应该如何理解课程的本质?是将其视为客观存在的知识体系,还是主观建构的经验过程?通过学习我认识到,这不仅是一个理论问题,更是一个关乎教育实践根本方向的价值选择问题。</p>
+            </div>
+        </div>
+        
+        <div class="section-divider">
+            <span>深度分析</span>
+        </div>
+
+        <div class="section-card" id="section2">
+            <div class="card-header">
+                <h2>二、课程理论的哲学基础：三大学科的理论贡献与价值判断</h2>
+            </div>
+            <p>在阅读过程中,施良方教授关于课程理论的三大基础学科——心理学、社会学、哲学——的阐述让我受益匪浅。通过学习我认识到,这三大学科不仅为课程理论提供了不同的分析视角,更重要的是,它们共同构成了回答“什么知识最有价值?”这一核心问题的理论基础。</p>
+
+            <h3>课程理论的三大基础学科</h3>
+            
+            <div class="mini-card">
+                <h4>心理学基础 ("为谁教")</h4>
+                <p class="no-indent">通过学习我认识到,心理学为课程理论提供了关于"学习者是谁"的根本认识。从古典的"形式训练说"到现代的认知心理学,不同心理学流派对学习者心理特质的理解直接影响了课程设计的基本取向。让我印象深刻的是,行为主义强调刺激-反应的机械联结，形成了程序教学和目标导向的课程模式；认知心理学关注信息加工和知识结构，产生了布鲁纳的"学科结构"理论和奥苏贝尔的"有意义学习"理论；人本主义重视个体的自我实现，推动了罗杰斯的"个人意义"生成理念。我理解到这些不同的心理学观点实际上反映了对人性本质的不同理解。</p>
+            </div>
+
+            <div class="mini-card">
+                <h4>社会学基础 (社会功能)</h4>
+                <p class="no-indent">在学习中我发现,社会学为课程理论展现了"知识与权力"的复杂关系。功能主义将课程视为社会化工具,强调其维护社会稳定的功能;冲突理论让我看到了课程作为社会不平等"再生产"机制的一面；解释理论帮助我理解知识的选择、组织和合法化过程,让我认识到课程背后的"符号暴力"。特别让我思考的是布迪厄的"文化资本"理论和阿普尔的"官方知识"概念,它们让我认识到课程选择背后的阶级利益和权力关系。这让我意识到,"什么知识最有价值?"这一问题本身就带有强烈的政治色彩。</p>
+            </div>
+            
+            <div class="mini-card">
+                <h4>哲学基础 (价值判断)</h4>
+                <p class="no-indent">通过学习我体会到,哲学为课程理论提供了最根本的价值判断标准。从柏拉图的理性主义到亚里士多德的经验主义,从杜威的实用主义到哈贝马斯的批判理论,我认识到不同的哲学立场决定了课程的根本取向。在我的理解中,理性主义强调永恒真理和普遍知识,形成了以学科知识为中心的课程观;经验主义重视感性经验和实践活动,产生了以活动为中心的课程观;实用主义关注知识的实际效用,推动了以问题解决为导向的课程观。我认为这些哲学传统的分歧,本质上反映了对"什么是真正有价值的知识"这一根本问题的不同回答。</p>
+            </div>
+            
+            <div class="theory-connection">
+                <h4>理论的持续对话</h4>
+                <p class="no-indent">相关研究表明,现代课程理论中存在着传统哲学(永恒主义、要素主义)与现代哲学(进步主义、重建主义)的持续对话。这种对话体现了教育哲学从注重知识传承向关注个体发展和社会改造的转变,进一步印证了哲学基础对课程理论发展的决定性作用。</p>
+            </div>
+        </div>
+
+        <div class="section-divider">
+            <span>理论反思</span>
+        </div>
+
+        <div class="section-card" id="section3">
+            <div class="card-header">
+                <h2>三、理论反思与当代启示：从技术理性到实践智慧的转向</h2>
+            </div>
+            <p>在阅读中,施良方教授关于课程理论从技术理性向实践理性和批判理性转向的论述让我印象深刻。我理解到这一转向不仅体现在施瓦布的"实践模式"、斯滕豪斯的"过程模式"以及批判理论学者的"批判模式"中,更深层地反映了课程理论对自身哲学基础的反思。</p>
+
+            <div class="critical-thinking">
+                <h4>对技术理性局限性的思考</h4>
+                <p class="no-indent">通过学习我认识到,传统的泰勒模式虽然为课程开发提供了系统性框架,但其背后的技术理性假设——将课程视为可以精确设计和控制的技术系统——在实践中存在问题。我发现这种模式忽视了教育情境的复杂性、教师的专业判断以及学生的主体性,容易导致课程实施中的机械化和去人性化倾向。让我感到更为重要的是,我理解到技术理性模式背后隐含着一种工具主义的知识观:知识被视为可以标准化生产和传递的商品,学习者被视为被动的接受者。我认为这种观念与现代教育对人的全面发展的追求形成了矛盾。</p>
+            </div>
+
+            <div class="learning-perspective">
+                <h4>对实践智慧价值的理解</h4>
+                <p class="no-indent">施瓦布提出的"实践模式"让我认识到课程问题的情境性和复杂性,他主张通过"集体审议"来解决具体的课程问题。我体会到这一模式的价值在于,它承认了教育实践的不确定性和创造性,强调了教师作为"反思性实践者"的专业地位。斯滕豪斯的"过程模式"进一步发展了这一思路,他提出"教师即研究者"的理念,强调课程的价值在于过程本身而非预设的结果。我认为这种观念体现了对教育本质的理解:教育是一个开放的、生成性的过程,而非封闭的、预设的系统。</p>
+                <p class="no-indent">我还了解到,近年来的研究显示,施瓦布实践模式的哲学基础可以追溯到古希腊的亚里士多德传统,特别是其关于实践智慧(phronesis)的思想。这种实践智慧强调在具体情境中做出明智判断的能力,这与现代课程理论中强调情境化和个性化的趋势高度一致。</p>
+            </div>
+            
+            <div class="critical-thinking">
+                <h4>对中国课程改革的思考</h4>
+                <p class="no-indent">通过学习我发现,当前我国基础教育课程改革中出现的诸多问题——如理念与实践的脱节、教师专业发展的滞后、评价体系的僵化——很大程度上可以从课程理论的哲学基础层面来理解。这让我思考一个问题:在全球化背景下,如何在借鉴西方课程理论的同时,构建具有中国特色的课程理论体系?我认为这不仅需要对西方理论进行批判性吸收,更需要从中华文化的深层传统中汲取智慧,形成既具有普遍意义又体现民族特色的课程理论。</p>
+            </div>
+        </div>
+
+        <div class="section-divider">
+            <span>结语</span>
+        </div>
+        
+        <div class="section-card conclusion" id="section4">
+            <div class="card-header">
+                <h2>四、我的学习收获与思考</h2>
+            </div>
+            <p class="no-indent">通过对 <em>curriculum</em> 词源学的学习和课程理论哲学基础的思考,我认识到了课程概念背后的深层哲学矛盾及其对当代教育实践的影响。我的主要收获包括:</p>
+            <ol>
+                <li>从词源学角度让我理解了课程概念的本体论二元性,为我理解课程定义的多样性提供了新的视角。"跑道"与"奔跑"的对立不仅是语言学现象,我认为更是教育哲学中工具理性与价值理性根本分歧的体现。</li>
+                <li>通过学习课程理论三大基础学科的理论贡献,我认识到了"什么知识最有价值?"这一核心问题的复杂性。心理学、社会学、哲学分别从不同维度为这一问题的回答提供了理论支撑,但也让我看到了新的理论张力。</li>
+                <li>我理解到课程理论从技术理性向实践智慧转向的重要意义,这为我思考当代课程改革提供了启发。我认为这一转向不仅是方法论的改变,更是教育哲学的根本变革。</li>
+            </ol>
+            <p>通过这次学习,我体会到课程理论作为教育学的核心领域,其发展必须建立在深厚的哲学基础之上。从"跑道"到"奔跑"的理念转换,让我看到教育从控制走向解放、从标准化走向个性化、从工具理性走向价值理性的变革。我认为这不仅是课程理论发展的内在要求,更是时代发展的趋势。</p>
+        </div>
+        
+        <div class="content-card document-footer">
+            <div class="footer-content">
+                <div class="footer-quote">
+                    <em>"教育的本质是一棵树摇动另一棵树，一朵云推动另一朵云，一个灵魂唤醒另一个灵魂。"</em>
+                    <span class="quote-author">—— 雅斯贝尔斯</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 字体大小调节
+        let currentFontSize = 16;
+        function adjustFontSize(delta) {
+            currentFontSize += delta;
+            currentFontSize = Math.max(12, Math.min(24, currentFontSize));
+            document.body.style.fontSize = currentFontSize + 'px';
+        }
+
+        // 夜间模式切换
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const button = event.target;
+            button.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+
+        // 行间距调节
+        let currentLineHeight = 1.75;
+        function toggleLineHeight() {
+            currentLineHeight = currentLineHeight === 1.75 ? 2.5 : 1.75;
+            document.body.style.lineHeight = currentLineHeight;
+        }
+
+        // 目录显示/隐藏
+        function toggleTOC() {
+            const toc = document.getElementById('tableOfContents');
+            toc.classList.toggle('hidden');
+        }
+
+        // 平滑滚动到锚点
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // 更新目录活动状态
+                    document.querySelectorAll('.toc-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // 表格行悬停效果增强
+        document.querySelectorAll('.framework-table tr').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+                this.style.transition = 'transform 0.2s ease';
+            });
+
+            row.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // 打印功能
+        function printDocument() {
+            window.print();
+        }
+
+        // 键盘快捷键
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+P 打印
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                printDocument();
+            }
+        });
+    </script>
+</body>
+</html>

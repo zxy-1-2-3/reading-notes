@@ -1,0 +1,55 @@
+{
+  "articles": [
+    {
+      "id": "teaching-theory-2024",
+      "title": "《教学理论：课堂教学的原理、策略与研究》读书心得",
+      "subtitle": "从学习者视角的深度解读与反思",
+      "author": "施良方、崔允漷",
+      "publisher": "华东师范大学出版社",
+      "publishYear": "1999年7月",
+      "isbn": "7-5617-2007-6",
+      "pages": "440页",
+      "tags": ["教学理论", "课堂教学", "教育策略", "学习者视角"],
+      "readingDate": "2024-01-15",
+      "fileName": "教学理论读书心得.html",
+      "summary": "本书从学习者的视角深入探讨了课堂教学的基本原理、有效策略和研究方法，为教育工作者提供了系统的理论框架和实践指导。"
+    },
+    {
+      "id": "curriculum-theory-2024",
+      "title": "《课程理论》读书心得",
+      "subtitle": "从词源学视角思考课程概念的哲学内涵",
+      "author": "施良方",
+      "publisher": "教育科学出版社",
+      "publishYear": "1996年",
+      "pages": "461页",
+      "isbn": "9787504113525",
+      "tags": ["课程理论", "教育哲学", "词源学", "本体论", "认识论"],
+      "readingDate": "2024-01-20",
+      "fileName": "课程理论读书心得.html",
+      "summary": "通过词源学分析curriculum概念的本体论二元性，深入探讨课程理论的哲学基础，从技术理性向实践智慧的转向，为理解当代课程改革提供哲学视角。"
+    },
+    {
+      "id": "math-culture-2024",
+      "title": "《数学教育中的数学文化》读书心得",
+      "subtitle": "从文化视角重新审视数学教育",
+      "author": "张维忠",
+      "publisher": "高等教育出版社",
+      "publishYear": "2010年",
+      "pages": "298页",
+      "isbn": "978-7-04-029876-5",
+      "tags": ["数学教育", "数学文化", "文化价值", "教学实践"],
+      "readingDate": "2024-01-25",
+      "fileName": "数学教育中的数学文化读书心得.html",
+      "summary": "从文化视角重新审视数学教育，探讨数学文化的内涵、价值和教学意蕴，为数学教育提供新的理论视角和实践指导。"
+    }
+  ],
+  "settings": {
+    "siteName": "读书心得分享",
+    "siteDescription": "深度阅读，理性思考，知识分享",
+    "articlesPerPage": 6,
+    "defaultSort": "date",
+    "enableSearch": true,
+    "enableCategories": false,
+    "enableTags": true
+  }
+}
