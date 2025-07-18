@@ -145,9 +145,117 @@
             transition: all 0.3s ease;
             position: relative;
             border: 1px solid var(--border-light);
-            min-height: 180px;
+            aspect-ratio: 1 / 1;
             display: flex;
             flex-direction: column;
+        }
+
+        /* 带背景图片的卡片样式 */
+        .book-card.has-background {
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        /* 为背景图片添加半透明遮罩以提升文字可读性 */
+        .book-card.has-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 30%,
+                rgba(0, 0, 0, 0.1) 70%,
+                rgba(0, 0, 0, 0.2) 100%
+            );
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* 确保内容在遮罩之上 */
+        .book-card.has-background .book-header,
+        .book-card.has-background .book-content,
+        .book-card.has-background .book-footer {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 修复：为有背景图片的卡片的文字添加精确的背景条 */
+        .book-card.has-background .title-text {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 6px 12px;
+            border-radius: 8px;
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            line-height: 1.5;
+            font-weight: 700;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .book-card.has-background .subtitle-text {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            line-height: 1.4;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .book-card.has-background .author-text,
+        .book-card.has-background .date-text {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3px 8px;
+            border-radius: 5px;
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            line-height: 1.3;
+            font-size: 0.9em;
+            font-weight: 600;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .book-card.has-background .summary-text {
+            background: rgba(255, 255, 255, 0.88);
+            padding: 5px 10px;
+            border-radius: 6px;
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            line-height: 1.4;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        /* 重要：重置有背景图片的卡片的标题样式 */
+        .book-card.has-background .book-title {
+            display: block !important;
+            margin-bottom: 8px;
+            /* 取消flex-box相关属性 */
+            -webkit-box-orient: unset !important;
+            -webkit-line-clamp: unset !important;
+            overflow: visible !important;
+        }
+
+        /* 确保其他元素也不会继承问题样式 */
+        .book-card.has-background .book-subtitle,
+        .book-card.has-background .book-author,
+        .book-card.has-background .book-date {
+            display: inline;
+            -webkit-box-orient: unset !important;
+            -webkit-line-clamp: unset !important;
+            overflow: visible !important;
         }
         
         .book-card:hover {
@@ -272,8 +380,6 @@
             box-shadow: var(--shadow-medium);
         }
         
-
-
         /* 空状态 */
         .empty-state {
             text-align: center;
@@ -338,8 +444,7 @@
             }
 
             .book-card {
-                height: auto;
-                min-height: 280px;
+                aspect-ratio: 1 / 1;
             }
             
             .book-header {
@@ -413,8 +518,6 @@
         <div class="empty-state-subtext">尝试调整搜索关键词</div>
     </div>
     
-
-
     <script>
         // 书籍数据
         const booksData = {
@@ -425,6 +528,7 @@
                     "author": "张维忠",
                     "readingDate": "2025-01-20",
                     "fileName": "数学教育中的数学文化读书心得.html",
+                    "backgroundImage": "数学教育中的数学文化.png",
                     "featured": true
                 },
                 {
@@ -433,6 +537,7 @@
                     "author": "施良方",
                     "readingDate": "2025-01-15",
                     "fileName": "课程理论读书心得.html",
+                    "backgroundImage": "课程理论.png",
                     "featured": false
                 },
                 {
@@ -441,40 +546,11 @@
                     "author": "施良方、崔允漷",
                     "readingDate": "2025-07-20",
                     "fileName": "教学理论读书心得.html",
+                    "backgroundImage": "教学理论.png",
                     "featured": false
                 },
                 {
                     "id": "book-placeholder-1",
-                    "title": "",
-                    "subtitle": "",
-                    "author": "",
-                    "publisher": "",
-                    "publishYear": "",
-                    "pages": "",
-                    "readingDate": "2025",
-                    "fileName": "#",
-                    "summary": "",
-                    "readingTime": "",
-                    "difficulty": "",
-                    "featured": false
-                },
-                {
-                    "id": "book-placeholder-2",
-                    "title": "",
-                    "subtitle": "",
-                    "author": "",
-                    "publisher": "",
-                    "publishYear": "",
-                    "pages": "",
-                    "readingDate": "2025",
-                    "fileName": "#",
-                    "summary": "",
-                    "readingTime": "",
-                    "difficulty": "",
-                    "featured": false
-                },
-                {
-                    "id": "book-placeholder-3",
                     "title": "",
                     "subtitle": "",
                     "author": "",
@@ -534,24 +610,30 @@
             }
 
             // 生成书籍卡片HTML
-            booksGrid.innerHTML = filteredBooks.map(book => `
-                <div class="book-card">
-                    <div class="book-header">
-                        ${book.title ? `<h2 class="book-title">${book.title}</h2>` : '<h2 class="book-title"></h2>'}
-                        ${book.subtitle ? `<p class="book-subtitle">${book.subtitle}</p>` : ''}
-                        <div class="book-meta">
-                            ${book.author ? `<span class="book-author">作者：${book.author}</span>` : '<span class="book-author">作者：</span>'}
-                            <span class="book-date">${formatDate(book.readingDate)}</span>
+            booksGrid.innerHTML = filteredBooks.map(book => {
+                const hasBackground = book.backgroundImage;
+                const backgroundStyle = hasBackground ? `style="background-image: url('${book.backgroundImage}')"` : '';
+                const cardClass = hasBackground ? 'book-card has-background' : 'book-card';
+
+                return `
+                    <div class="${cardClass}" ${backgroundStyle}>
+                        <div class="book-header">
+                            ${book.title ? `<h2 class="book-title">${hasBackground ? `<span class="title-text">${book.title}</span>` : book.title}</h2>` : '<h2 class="book-title"></h2>'}
+                            ${book.subtitle ? `<p class="book-subtitle">${hasBackground ? `<span class="subtitle-text">${book.subtitle}</span>` : book.subtitle}</p>` : ''}
+                            <div class="book-meta">
+                                ${book.author ? `<span class="book-author">${hasBackground ? `<span class="author-text">作者：${book.author}</span>` : `作者：${book.author}`}</span>` : '<span class="book-author">作者：</span>'}
+                                <span class="book-date">${hasBackground ? `<span class="date-text">${formatDate(book.readingDate)}</span>` : formatDate(book.readingDate)}</span>
+                            </div>
+                        </div>
+
+                        ${book.summary ? `<div class="book-content"><p class="book-summary">${hasBackground ? `<span class="summary-text">${book.summary}</span>` : book.summary}</p></div>` : ''}
+
+                        <div class="book-footer">
+                            <a href="${book.fileName}" class="read-button">开始阅读</a>
                         </div>
                     </div>
-
-                    ${book.summary ? `<div class="book-content"><p class="book-summary">${book.summary}</p></div>` : ''}
-
-                    <div class="book-footer">
-                        <a href="${book.fileName}" class="read-button">开始阅读</a>
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         // 格式化日期
